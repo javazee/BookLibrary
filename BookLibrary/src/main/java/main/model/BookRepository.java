@@ -19,4 +19,10 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
             "LEFT JOIN authors AS a ON ab.author_id = a.id order by a.first_name and a.last_name ",
     nativeQuery = true)
     Page<Book> findAllOrderedByAuthor(PageRequest request, Sort.Direction direction);
+
+    @Query(value = "SELECT * FROM books AS b LEFT JOIN author_books AS ab ON b.id = ab.book_id " +
+            "LEFT JOIN authors AS a ON ab.author_id = a.id " +
+            "WHERE (b.name LIKE %?1% OR a.first_name LIKE %?1% OR a.last_name LIKE %?1%) ORDER BY b.name asc",
+    nativeQuery = true)
+    Page<Book> searchBooksByQuery(String query, PageRequest request);
 }

@@ -113,6 +113,20 @@ public class BookService {
         return response;
     }
 
+    public BooksListResponse searchBooks(String query, int page){
+        Page<Book> books;
+        BooksListResponse response = new BooksListResponse();
+        if (query == null || query.trim().isEmpty()){
+            books = bookRepository.findAllOrderedBooks(PageRequest.of(page, 10, Sort.by("name").ascending()));
+        } else {
+            books = bookRepository.searchBooksByQuery(query, PageRequest.of(page, 10));
+        }
+        if (books.isEmpty()) return response;
+        response.setBooks(books.getContent().stream().distinct().collect(Collectors.toList()));
+        response.setResult(true);
+        return response;
+    }
+
     private HashMap<String, String> validateDataForm(String name, List<AuthorOfBook> authors, String genre, String year){
         HashMap <String, String> errors = new HashMap<>();
         if (name.length() == 0) {

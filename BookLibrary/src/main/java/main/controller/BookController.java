@@ -6,6 +6,7 @@ import main.api.request.UpdateBookRequest;
 import main.api.response.AddBookResponse;
 import main.api.response.BooksListResponse;
 import main.api.response.UpdateBookResponse;
+import main.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,5 +60,13 @@ public class BookController {
                 request.getYear());
         if (response.getErrors().isEmpty()) return ResponseEntity.status(HttpStatus.OK).body(response);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
+
+    @GetMapping(path = "/search")
+    protected ResponseEntity<BooksListResponse> searchBooks(@RequestParam (defaultValue = "query") String query,
+                                                            @RequestParam (defaultValue = "0") int page ) {
+        BooksListResponse response = bookService.searchBooks(query, page);
+        if (response.isResult()) return ResponseEntity.status(HttpStatus.OK).body(response);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 }
