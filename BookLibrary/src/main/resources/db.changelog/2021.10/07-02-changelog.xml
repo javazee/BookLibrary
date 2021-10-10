@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+    <changeSet id="1" author="eduard">
+        <insert tableName="authors">
+            <column name="first_name">Jack</column>
+            <column name="last_name">London</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name">George</column>
+            <column name="last_name">Orwell</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name">Victor</column>
+            <column name="last_name">Hugo</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name">Joanne</column>
+            <column name="last_name">Rowling</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name">Stephen</column>
+            <column name="last_name">King</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Martin Eden</column>
+            <column name="year">1909</column>
+            <column name="code">ISBN 978-5-58697-00001-9</column>
+            <column name="genre">ROMANCE</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">1</column>
+            <column name="book_id">1</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">The Abysmal Brute</column>
+            <column name="year">1913</column>
+            <column name="code">ISBN 978-5-58697-00002-9</column>
+            <column name="genre">DRAMA</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">1</column>
+            <column name="book_id">2</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">The Sea-Wolf</column>
+            <column name="year">1904</column>
+            <column name="code">ISBN 978-5-58697-00003-7</column>
+            <column name="genre">DRAMA</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">1</column>
+            <column name="book_id">3</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">1984</column>
+            <column name="year">1949</column>
+            <column name="code">ISBN 978-5-58697-00004-7</column>
+            <column name="genre">DYSTOPIA</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">2</column>
+            <column name="book_id">4</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Animal Farm</column>
+            <column name="year">1945</column>
+            <column name="code">ISBN 978-5-58697-00005-7</column>
+            <column name="genre">SATIRE</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">2</column>
+            <column name="book_id">5</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Les Miserables</column>
+            <column name="year">1862</column>
+            <column name="code">ISBN 978-5-58697-00006-5</column>
+            <column name="genre">CLASSIC</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">3</column>
+            <column name="book_id">6</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Harry Potter and the Philosopher's Stone</column>
+            <column name="year">1997</column>
+            <column name="code">ISBN 978-5-58697-00007-5</column>
+            <column name="genre">FANTASY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">4</column>
+            <column name="book_id">7</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Harry Potter and the Chamber of Secrets</column>
+            <column name="year">1998</column>
+            <column name="code">ISBN 978-5-58697-00008-5</column>
+            <column name="genre">FANTASY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">4</column>
+            <column name="book_id">8</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Harry Potter and the Prisoner of Azkaban</column>
+            <column name="year">1999</column>
+            <column name="code">ISBN 978-5-58697-00009-5</column>
+            <column name="genre">FANTASY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">4</column>
+            <column name="book_id">9</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Harry Potter and the Goblet of Fire</column>
+            <column name="year">2000</column>
+            <column name="code">ISBN 978-5-58697-00010-5</column>
+            <column name="genre">FANTASY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">4</column>
+            <column name="book_id">10</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">Harry Potter and the Order of the Phoenix</column>
+            <column name="year">2003</column>
+            <column name="code">ISBN 978-5-58697-00011-5</column>
+            <column name="genre">FANTASY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">4</column>
+            <column name="book_id">11</column>
+        </insert>
+        <insert tableName="books">
+            <column name="name">The Glass Floor</column>
+            <column name="year">1967</column>
+            <column name="code">ISBN 978-5-58697-00012-3</column>
+            <column name="genre">SHORT_STORY</column>
+        </insert>
+        <insert tableName="author_books">
+            <column name="author_id">5</column>
+            <column name="book_id">12</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

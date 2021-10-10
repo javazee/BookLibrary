@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; Charset=UTF-8">
+    <title>bookLibrary</title>
+</head>
+<body>
+
+<div style="position: absolute;
+    top: 35px;
+    left: 450px">
+    <p><b id="search">Поиск:</b><br>
+        <input type="text" size="40">
+    </p>
+</div>
+
+<h2>Список книг<br></h2>
+<button id="show-add-book-form">Добавить книгу</button>
+<br><br>
+<div id="book-list">
+    <table class = "table">
+        <tr>
+            <th>№</th>
+            <th class="sort" data-column ='name'>Наименование</th>
+<!--            <th class="sort" data-column ='author'>Автор</th>-->
+            <th class="sort" data-column ='year'>Год публикации</th>
+            <th class="sort" data-column ='code'>ISBN код</th>
+        </tr>
+        <tr th:each="mapEntry : ${books}">
+            <td th:text="${mapEntry.key}"></td>
+            <td th:text="${mapEntry.value.name}"></td>
+<!--            <td>-->
+<!--                <span th:text="${mapEntry.value.author.firstName}"></span>-->
+<!--                <span th:text="${mapEntry.value.author.lastName}"></span>-->
+<!--            </td>-->
+            <td th:text="${mapEntry.value.year}"></td>
+            <td th:text="${mapEntry.value.code}"></td>
+            <td><button class= "delete" th:attr="data-id=${mapEntry.value.id}">delete</button></td>
+            <td><button class = "edit" th:attr="data-id=${mapEntry.value.id}">edit</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
