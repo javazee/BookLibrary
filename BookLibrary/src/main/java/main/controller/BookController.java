@@ -6,7 +6,6 @@ import main.api.request.UpdateBookRequest;
 import main.api.response.AddBookResponse;
 import main.api.response.BooksListResponse;
 import main.api.response.UpdateBookResponse;
-import main.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
